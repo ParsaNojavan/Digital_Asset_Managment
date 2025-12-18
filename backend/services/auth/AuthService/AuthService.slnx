@@ -1,9 +1,0 @@
-<Solution>
-  <Folder Name="/building-blocks/">
-    <Project Path="../../../building-blocks/SharedKernel/SharedKernel/SharedKernel.csproj" Id="b8bba322-573e-49ac-96b6-4613270a9f3d" />
-  </Folder>
-  <Project Path="src/AuthService.Api/AuthService.Api.csproj" Id="7a4fdf07-15bb-42b9-b8c5-dafd8f8a225a" />
-  <Project Path="src/AuthService.Application/AuthService.Application.csproj" Id="17107040-d944-49ec-af41-172f66847f95" />
-  <Project Path="src/AuthService.Domain/AuthService.Domain.csproj" Id="7eebeed1-a004-4032-bea2-a7ca3acc45b6" />
-  <Project Path="src/AuthService.Infrastructure/AuthService.Infrastructure.csproj" Id="a86fc69c-db82-4bda-a955-246c56688d6d" />
-</Solution>

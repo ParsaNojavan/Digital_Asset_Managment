@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Folders.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9e8f19d8909b5d071eb914d6f08d73f4896c615")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a926c473ef344d1c626526eb576d58c12961ecf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Folders.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Folders.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
