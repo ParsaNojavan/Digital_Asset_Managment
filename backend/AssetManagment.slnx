@@ -1,0 +1,35 @@
+<Solution>
+  <Folder Name="/building-blocks/" />
+  <Folder Name="/building-blocks/Caching/" />
+  <Folder Name="/building-blocks/Messaging/" />
+  <Folder Name="/building-blocks/Security/" />
+  <Folder Name="/building-blocks/SharedKernel/">
+    <Project Path="building-blocks/SharedKernel/SharedKernel/SharedKernel.csproj" />
+  </Folder>
+  <Folder Name="/docker/" />
+  <Folder Name="/gateway/" />
+  <Folder Name="/gateway/ocelot/" />
+  <Folder Name="/services/" />
+  <Folder Name="/services/assets/" />
+  <Folder Name="/services/auth/" />
+  <Folder Name="/services/auth/src/">
+    <Project Path="services/auth/AuthService/src/AuthService.Api/AuthService.Api.csproj" />
+    <Project Path="services/auth/AuthService/src/AuthService.Application/AuthService.Application.csproj" />
+    <Project Path="services/auth/AuthService/src/AuthService.Domain/AuthService.Domain.csproj" />
+    <Project Path="services/auth/AuthService/src/AuthService.Infrastructure/AuthService.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/services/folders/" />
+  <Folder Name="/services/folders/src/">
+    <Project Path="services/folders/src/Folders.API/Folders.API.csproj" />
+    <Project Path="services/folders/src/Folders.Application/Folders.Application.csproj" Id="929df67a-3502-449e-a3ab-a6d7b3d1f703" />
+    <Project Path="services/folders/src/Folders.Domain/Folders.Domain.csproj" Id="1d184ed6-a33e-4674-a414-fa017c58fd61" />
+    <Project Path="services/folders/src/Folders.Infrastructure/Folders.Infrastructure.csproj" Id="528bdb82-567d-4e77-809c-4834113946d6" />
+  </Folder>
+  <Folder Name="/services/notifications/" />
+  <Folder Name="/services/users/">
+    <Project Path="services/users/src/Users.API/Users.API.csproj" Id="e8730061-0c54-4d45-bbb2-36915a27d65e" />
+    <Project Path="services/users/src/Users.Application/Users.Application.csproj" Id="5d9749db-319f-408a-b4e1-bc380f55d692" />
+    <Project Path="services/users/src/Users.Domain/Users.Domain.csproj" Id="ca347d3b-bf5a-4326-b13d-1931ee91b487" />
+    <Project Path="services/users/src/Users.Infrastructure/Users.Infrastructure.csproj" Id="96abd1c0-9de5-4e85-af6d-134afc544918" />
+  </Folder>
+</Solution>
