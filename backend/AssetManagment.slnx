@@ -10,15 +10,14 @@
   <Folder Name="/gateway/" />
   <Folder Name="/gateway/ocelot/" />
   <Folder Name="/services/" />
-  <Folder Name="/services/assets/" />
-  <Folder Name="/services/folders/" />
-  <Folder Name="/services/folders/src/">
-    <Project Path="services/folders/src/Folders.API/Folders.API.csproj" />
-    <Project Path="services/folders/src/Folders.Application/Folders.Application.csproj" Id="929df67a-3502-449e-a3ab-a6d7b3d1f703" />
-    <Project Path="services/folders/src/Folders.Domain/Folders.Domain.csproj" Id="1d184ed6-a33e-4674-a414-fa017c58fd61" />
-    <Project Path="services/folders/src/Folders.Infrastructure/Folders.Infrastructure.csproj" Id="528bdb82-567d-4e77-809c-4834113946d6" />
-  </Folder>
   <Folder Name="/services/notifications/" />
+  <Folder Name="/services/storage/" />
+  <Folder Name="/services/storage/src/">
+    <Project Path="services/storage/src/Storage.API/Storage.API.csproj" />
+    <Project Path="services/storage/src/Storage.Application/Storage.Application.csproj" />
+    <Project Path="services/storage/src/Storage.Domain/Storage.Domain.csproj" />
+    <Project Path="services/storage/src/Storage.Infrastructure/Storage.Infrastructure.csproj" />
+  </Folder>
   <Folder Name="/services/user/" />
   <Folder Name="/services/user/src/">
     <Project Path="services/user/UserService/src/UserService.Api/UserService.Api.csproj" />
