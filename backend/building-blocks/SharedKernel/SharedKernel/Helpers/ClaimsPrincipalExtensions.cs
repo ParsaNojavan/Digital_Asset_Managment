@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace Storage.API.Extensions
+namespace SharedKernel.Helpers
 {
     public static class ClaimsPrincipalExtensions
     {

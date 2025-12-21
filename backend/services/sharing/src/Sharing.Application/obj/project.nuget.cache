@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "MFXf5puN9oo=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Parsa Nojavan\\VsCode\\Projects\\Digital Asset Managment\\backend\\services\\sharing\\src\\Sharing.Application\\Sharing.Application.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Parsa Nojavan\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
+    "C:\\Users\\Parsa Nojavan\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
+    "C:\\Users\\Parsa Nojavan\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

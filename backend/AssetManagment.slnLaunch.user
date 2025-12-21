@@ -9,6 +9,10 @@
       {
         "Path": "services\\storage\\src\\Storage.API\\Storage.API.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "services\\sharing\\src\\Sharing.API\\Sharing.API.csproj",
+        "Action": "Start"
       }
     ]
   }
