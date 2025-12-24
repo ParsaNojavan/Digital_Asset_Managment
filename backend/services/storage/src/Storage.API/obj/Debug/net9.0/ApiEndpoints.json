@@ -33,6 +33,22 @@
   },
   {
     "ContainingType": "Storage.API.Controllers.FilesController",
+    "Method": "Rename",
+    "RelativePath": "api/files/rename",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "fileDto",
+        "Type": "Storage.Application.DTOs.RenameFileDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Storage.API.Controllers.FilesController",
     "Method": "Upload",
     "RelativePath": "api/files/upload",
     "HttpMethod": "POST",
@@ -95,12 +111,44 @@
   },
   {
     "ContainingType": "Storage.API.Controllers.FolderController",
+    "Method": "DeleteFolder",
+    "RelativePath": "api/Folder/delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Storage.API.Controllers.FolderController",
     "Method": "GetMyFolders",
     "RelativePath": "api/Folder/me",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Storage.API.Controllers.FolderController",
+    "Method": "RenameFolder",
+    "RelativePath": "api/Folder/rename",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "renameDto",
+        "Type": "Storage.Application.DTOs.RenameFolderDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

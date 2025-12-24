@@ -19,5 +19,19 @@ namespace Storage.Application.Services
 
         Task DeleteAsync(string relativePath,
             CancellationToken cancellationToken = default);
+
+        Task DeleteDirectoryAsync(string relativePath,
+            CancellationToken cancellationToken = default);
+
+        Task MoveDirectoryAsync(
+    string sourceRelativePath,
+    string destinationRelativePath,
+    CancellationToken cancellationToken = default);
+
+        Task MoveFileAsync(
+    string sourceRelativePath,
+    string destinationRelativePath,
+    CancellationToken cancellationToken);
+
     }
 }

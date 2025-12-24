@@ -1,5 +1,6 @@
 ﻿using Folders.Domain.Entities;
 using MediatR;
+using Storage.Application.CQRS.Command.Folders.UploadFolderCommand;
 using Storage.Domain.Repositories;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Storage.Application.CQRS.Command.Folders.Handlers
+namespace Storage.Application.CQRS.Handlers.FolderHandlers
 {
     public class CreateFolderCommandHandler : IRequestHandler<CreateFolderCommand, Guid>
     {

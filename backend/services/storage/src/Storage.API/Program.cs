@@ -1,6 +1,6 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
-using Storage.Application.CQRS.Command.Folders;
+using Storage.Application.CQRS.Command.Folders.UploadFolderCommand;
 using Storage.Application.CQRS.Query;
 using Storage.Application.Services;
 using Storage.Domain.Repositories;

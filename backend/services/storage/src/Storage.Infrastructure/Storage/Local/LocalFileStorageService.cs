@@ -22,7 +22,7 @@ namespace Storage.Infrastructure.Storage.Local
 
             var directory = Path.GetDirectoryName(fullPath);
 
-            if (!Directory.Exists(directory))   Directory.CreateDirectory(directory!);
+            if (!Directory.Exists(directory)) Directory.CreateDirectory(directory!);
 
             await using var file = new FileStream(fullPath, FileMode.Create
                 , FileAccess.Write, FileShare.None);
@@ -35,8 +35,8 @@ namespace Storage.Infrastructure.Storage.Local
 
         public async Task<Stream> DownloadAsync(string relativePath, CancellationToken cancellationToken = default)
         {
-            var fullPath = Path.Combine(_rootPath, relativePath); 
-            fullPath = Path.GetFullPath(fullPath); 
+            var fullPath = Path.Combine(_rootPath, relativePath);
+            fullPath = Path.GetFullPath(fullPath);
 
             if (!File.Exists(fullPath))
                 throw new FileNotFoundException("File not found", fullPath);
@@ -54,5 +54,52 @@ namespace Storage.Infrastructure.Storage.Local
 
             await Task.CompletedTask;
         }
+
+        public async Task DeleteDirectoryAsync(string relativePath, CancellationToken cancellationToken = default)
+        {
+            var normalizedPath = relativePath.Replace('/', Path.DirectorySeparatorChar);
+            var fullPath = Path.Combine(_rootPath, normalizedPath);
+
+            if (Directory.Exists(fullPath))
+            {
+                Directory.Delete(fullPath, recursive: true);
+            }
+
+            await Task.CompletedTask;
+        }
+
+        public async Task MoveDirectoryAsync(string sourceRelativePath, string destinationRelativePath, CancellationToken cancellationToken = default)
+        {
+            var source = Path.Combine(_rootPath, sourceRelativePath);
+            var destination = Path.Combine(_rootPath, destinationRelativePath);
+
+            if (!Directory.Exists(source))
+                throw new DirectoryNotFoundException(source);
+
+            Directory.Move(source, destination);
+
+            await Task.CompletedTask;
+        }
+
+        public async Task MoveFileAsync(
+    string sourceRelativePath,
+    string destinationRelativePath,
+    CancellationToken cancellationToken = default)
+        {
+            var source = Path.Combine(_rootPath, sourceRelativePath);
+            var destination = Path.Combine(_rootPath, destinationRelativePath);
+
+            if (!File.Exists(source))
+                throw new FileNotFoundException(source);
+
+            var destinationDirectory = Path.GetDirectoryName(destination);
+            if (!Directory.Exists(destinationDirectory))
+                Directory.CreateDirectory(destinationDirectory!);
+
+            File.Move(source, destination);
+
+            await Task.CompletedTask;
+        }
+
     }
 }

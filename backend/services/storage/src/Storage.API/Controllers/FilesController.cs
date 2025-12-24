@@ -6,7 +6,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SharedKernel.Helpers;
 using Storage.API.Extensions;
+using Storage.Application.CQRS.Command.Files.RenameFileCommand;
 using Storage.Application.CQRS.Command.Files.UploadFileCommand;
+using Storage.Application.CQRS.Command.Folders.RenameFolderCommand;
+using Storage.Application.DTOs;
 using Storage.Application.Services;
 using Storage.Domain.Repositories;
 
@@ -89,6 +92,17 @@ namespace Storage.API.Controllers
             await _fileStorageService.DeleteAsync(path, cancellationToken);
 
             return NoContent();
+        }
+        #endregion
+
+        #region Rename
+        [HttpPost("rename")]
+        public async Task<IActionResult> Rename([FromBody]RenameFileDto fileDto)
+        {
+            var userId = User.GetUserId();
+            var command = new RenameFileCommand(fileDto.FileId, userId, fileDto.Name);
+            var newPath = await _mediator.Send(command);
+            return Ok(new { Path = newPath });
         }
         #endregion
     }

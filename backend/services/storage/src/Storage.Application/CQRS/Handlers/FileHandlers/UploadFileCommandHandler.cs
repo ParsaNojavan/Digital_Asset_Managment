@@ -1,6 +1,7 @@
 ﻿using Assests.Domain.Entities;
 using Folders.Domain.Entities;
 using MediatR;
+using Storage.Application.CQRS.Command.Files.UploadFileCommand;
 using Storage.Application.DTOs;
 using Storage.Application.Services;
 using Storage.Domain.Repositories;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Storage.Application.CQRS.Command.Files.UploadFileCommand.Handlers
+namespace Storage.Application.CQRS.Handlers.FileHandlers
 {
     public class UploadFileCommandHandler
     : IRequestHandler<UploadFileCommand, UploadFileResultDto>
