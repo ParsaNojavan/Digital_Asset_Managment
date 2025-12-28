@@ -50,5 +50,16 @@ namespace Sharing.Infrastructure.Repositories
 
             await _db.ExecuteAsync(sql,sharedAsset);
         }
+
+        public async Task UpdateSharedAsset(SharedAsset sharedAsset)
+        {
+            var sql = @"UPDATE SharedAssets SET 
+                               AssetId = @AssetId
+                               SharedWithUserId = @SharedWithUserId
+                               OwnerUserId = @OwnerUserId
+                               WHERE Id = @Id";
+
+            await _db.ExecuteAsync(sql, sharedAsset);
+        }
     }
 }

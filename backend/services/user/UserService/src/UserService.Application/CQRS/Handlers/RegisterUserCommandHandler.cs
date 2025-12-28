@@ -8,8 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BCrypt.Net;
+using AuthService.Application.CQRS.Command.Register;
 
-namespace AuthService.Application.CQRS.Command.Register.Handlers
+namespace UserService.Application.CQRS.Handlers
 {
     public class RegisterUserCommandHandler : IRequestHandler<RegisterUserCommand,string>
     {

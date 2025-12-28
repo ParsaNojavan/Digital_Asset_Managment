@@ -12,6 +12,7 @@ namespace Sharing.Domain.Repositories
         Task InsertAsync(SharedAsset sharedAsset);
         Task<IEnumerable<SharedAsset>> GetByOwnerAsync(Guid ownerUserId);
         Task<IEnumerable<SharedAsset>> GetByRecipientAsync(Guid sharedWithUserId);
+        Task UpdateSharedAsset(SharedAsset sharedAsset);  
         Task<SharedAsset?> GetByIdAsync(Guid id);
         Task DeleteAsync(Guid id);
     }

@@ -1,11 +1,12 @@
-﻿using FluentValidation;
+﻿using AuthService.Application.CQRS.Command.Register;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AuthService.Application.CQRS.Command.Register.Validators
+namespace UserService.Application.CQRS.Validators
 {
     public class RegisterUserCommandValidator : AbstractValidator<RegisterUserCommand>
     {

@@ -1,4 +1,5 @@
-﻿using AuthService.Application.DTOs.Responses;
+﻿using AuthService.Application.CQRS.Command.Refresh;
+using AuthService.Application.DTOs.Responses;
 using AuthService.Application.Services.JWT;
 using AuthService.Domain.Entities;
 using AuthService.Domain.Repositories;
@@ -9,7 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AuthService.Application.CQRS.Command.Refresh.Handlers
+namespace UserService.Application.CQRS.Handlers
 {
     public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, RefreshTokenResponseDto>
     {

@@ -3,6 +3,7 @@ using AuthService.Application.CQRS.Command.Register;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using UserService.Application.CQRS.Command.Login;
 
 namespace AuthService.Api.Controllers
 {
@@ -37,5 +38,18 @@ namespace AuthService.Api.Controllers
             }
         }
 
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] LoginUserCommand command)
+        {
+            try
+            {
+                var result = await _mediator.Send(command);
+                return Ok(result);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                return Unauthorized(new { error = ex.Message });
+            }
+        }
     }
 }
