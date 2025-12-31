@@ -3,6 +3,8 @@ using AuthService.Application.CQRS.Command.Register;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SharedKernel.Helpers;
+using UserService.Application.CQRS.Command.DeleteUser;
 using UserService.Application.CQRS.Command.Login;
 
 namespace AuthService.Api.Controllers
@@ -50,6 +52,14 @@ namespace AuthService.Api.Controllers
             {
                 return Unauthorized(new { error = ex.Message });
             }
+        }
+
+        [HttpDelete("delete")]
+        public async Task<IActionResult> DeleteMe(CancellationToken cancellationToken)
+        {
+            var userId = User.GetUserId();
+            await _mediator.Send(new DeleteUserCommand { UserId = userId}, cancellationToken);
+            return NoContent();
         }
     }
 }

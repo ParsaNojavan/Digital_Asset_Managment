@@ -1,9 +1,11 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.IdentityModel.Tokens;
+using Storage.API.BackgroundServices;
 using Storage.Application.CQRS.Command.Folders.UploadFolderCommand;
 using Storage.Application.CQRS.Query;
 using Storage.Application.Services;
 using Storage.Domain.Repositories;
+using Storage.Infrastructure.Messaging;
 using Storage.Infrastructure.Repositories;
 using Storage.Infrastructure.Storage.Local;
 using System.Data;
@@ -28,7 +30,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowAll",
         policy =>
         {
-            policy.AllowAnyOrigin() 
+            policy.AllowAnyOrigin()
                   .AllowAnyMethod()
                   .AllowAnyHeader();
         });
@@ -51,6 +53,13 @@ builder.Services.AddAuthentication("Bearer")
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:SecretKey"]))
         };
     });
+
+builder.Services.Configure<RabbitMqOptions>(builder.Configuration.GetSection("RabbitMq"));
+
+builder.Services.AddScoped<IUserStorageCleanupService, UserStorageCleanupService>();
+
+builder.Services.AddHostedService<UserDeletedConsumer>();
+
 
 
 

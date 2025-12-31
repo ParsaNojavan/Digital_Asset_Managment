@@ -39,5 +39,11 @@ namespace AuthService.Infrastructure.Repositories
             var sql = "SELECT * FROM Users WHERE Id = @Id";
             return await _db.QueryFirstOrDefaultAsync<User>(sql, new {Id = id});
         }
+
+        public async Task DeleteUser(Guid userId)
+        {
+            var sql = "DELETE FROM Users WHERE Id = @Id";
+            await _db.ExecuteAsync(sql, new {Id = userId});
+        }
     }
 }
