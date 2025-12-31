@@ -6,7 +6,9 @@
   <Folder Name="/building-blocks/SharedKernel/">
     <Project Path="building-blocks/SharedKernel/SharedKernel/SharedKernel.csproj" />
   </Folder>
-  <Folder Name="/docker/" />
+  <Folder Name="/docker/">
+    <File Path="docker-compose.yml" />
+  </Folder>
   <Folder Name="/gateway/" />
   <Folder Name="/gateway/ocelot/" />
   <Folder Name="/services/" />

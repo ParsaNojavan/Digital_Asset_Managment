@@ -12,5 +12,7 @@ namespace AuthService.Domain.Repositories
         Task AddAsync(RefreshToken token);
         Task<RefreshToken?> GetAsync(string token);
         Task RevokeAsync(string token);
+
+        Task DeleteByUserId(Guid userId);
     }
 }

@@ -12,5 +12,6 @@ namespace AuthService.Domain.Repositories
         Task InsertUser(User user);
         Task<User?> GetUserByEmail(string email);
         Task<User?> GetUserById(Guid id);
+        Task DeleteUser(Guid userId);
     }
 }

@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "Sharing.API.Controllers.ShareAssetController",
+    "Method": "EditSharedUser",
+    "RelativePath": "api/ShareAsset/edit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Sharing.Application.DTOs.ShareAssetDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sharing.API.Controllers.ShareAssetController",
     "Method": "Share",
     "RelativePath": "api/ShareAsset/share",
     "HttpMethod": "POST",
@@ -10,6 +26,22 @@
       {
         "Name": "dto",
         "Type": "Sharing.Application.DTOs.ShareAssetDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sharing.API.Controllers.ShareAssetController",
+    "Method": "UnShare",
+    "RelativePath": "api/ShareAsset/unshare",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Sharing.Application.DTOs.UnShareAssetDto",
         "IsRequired": true
       }
     ],

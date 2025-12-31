@@ -29,6 +29,12 @@ namespace AuthService.Infrastructure.Repositories
             await _db.ExecuteAsync(sql, token);
         }
 
+        public async Task DeleteByUserId(Guid userId)
+        {
+            var sql = "DELETE FROM RefreshTokens WHERE UserId = @UserId";
+            await _db.ExecuteAsync(sql, new {UserId = userId});
+        }
+
         public async Task<RefreshToken?> GetAsync(string token)
         {
             var sql = "SELECT * FROM RefreshTokens WHERE Token = @Token";
