@@ -32,7 +32,6 @@ namespace UserService.Infrastructure.Messaging
                 HostName = _options.Host,
                 UserName = _options.Username,
                 Password = _options.Password,
-                // Port = _options.Port // اگر داری
             };
         }
 
@@ -43,16 +42,15 @@ namespace UserService.Infrastructure.Messaging
 
             var body = Encoding.UTF8.GetBytes(JsonSerializer.Serialize(@event));
 
-            // ✅ 7.2: باید properties واقعی بسازی تا generic type مشخص بشه
             var props = new BasicProperties
             {
                 ContentType = "application/json",
-                DeliveryMode = DeliveryModes.Persistent // اگر durable می‌خوای
+                DeliveryMode = DeliveryModes.Persistent 
             };
 
             await _channel!.BasicPublishAsync<BasicProperties>(
                 exchange: _options.Exchange,
-                routingKey: "",          // fanout -> routingKey مهم نیست
+                routingKey: "",       
                 mandatory: false,
                 basicProperties: props,
                 body: body,
@@ -70,7 +68,6 @@ namespace UserService.Infrastructure.Messaging
 
                 _connection = await _factory.CreateConnectionAsync(cancellationToken);
 
-                // ✅ 7.2: حتماً named arg بده تا CancellationToken با options قاطی نشه
                 _channel = await _connection.CreateChannelAsync(cancellationToken: cancellationToken);
 
                 await _channel.ExchangeDeclareAsync(
